@@ -1,0 +1,1 @@
+int x; int y; x=2 y=x+2.5 print x; print y;
