@@ -67,11 +67,12 @@ NOTEQUAL: '!=';
 
 SEMI: ';';
 
-FLOAT: ('0' .. '9') + ('.' ('0' .. '9') +)?;
+FLOAT: [0-9]+ '.' [0-9]*
+       | '.'[0-9]+;
 
-INTEGERS: ('0' .. '9')+;
+INTEGERS: [0-9]+ ;
 
-VARIABLENAME: ('a' .. 'z') | ('A' .. 'Z') | '_';
+VARIABLENAME: [a-zA-Z]+;
 
 // Ignore all white spaces
 WS: [ \t\r\n]+ -> skip ;
