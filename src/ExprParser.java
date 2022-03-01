@@ -16,9 +16,9 @@ public class ExprParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		OUTSTATEMENT=1, INT=2, PLUS=3, MINUS=4, DIV=5, MULT=6, MOD=7, EQUALS=8, 
-		ASSIGN=9, NOTEQUAL=10, SEMI=11, POINT=12, FLOAT=13, INTEGER=14, VARIABLENAME=15, 
-		WS=16;
+		OUTSTATEMENT=1, INT=2, PLUS=3, MINUS=4, DIV=5, MULT=6, MOD=7, ASSIGN=8, 
+		NOTEQUAL=9, SEMI=10, POINT=11, FLOAT=12, INTEGER=13, VARIABLENAME=14, 
+		WS=15;
 	public static final int
 		RULE_prog = 0, RULE_declare = 1, RULE_makestate = 2, RULE_assignstate = 3, 
 		RULE_outstate = 4, RULE_expression = 5, RULE_term = 6, RULE_id = 7, RULE_integer = 8, 
@@ -33,16 +33,15 @@ public class ExprParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'print'", "'int'", "'+'", "'-'", "'/'", "'*'", "'%'", "'=='", 
-			"'='", "'!='", "';'", "'.'"
+			null, "'print'", "'int'", "'+'", "'-'", "'/'", "'*'", "'%'", "'='", "'!='", 
+			"';'", "'.'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "OUTSTATEMENT", "INT", "PLUS", "MINUS", "DIV", "MULT", "MOD", "EQUALS", 
-			"ASSIGN", "NOTEQUAL", "SEMI", "POINT", "FLOAT", "INTEGER", "VARIABLENAME", 
-			"WS"
+			null, "OUTSTATEMENT", "INT", "PLUS", "MINUS", "DIV", "MULT", "MOD", "ASSIGN", 
+			"NOTEQUAL", "SEMI", "POINT", "FLOAT", "INTEGER", "VARIABLENAME", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -704,7 +703,7 @@ public class ExprParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\22P\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21P\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\3"+
 		"\2\7\2\30\n\2\f\2\16\2\33\13\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3#\n\3\3\4\3"+
 		"\4\5\4\'\n\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3"+
@@ -714,16 +713,16 @@ public class ExprParser extends Parser {
 		",\3\2\2\2\fB\3\2\2\2\16G\3\2\2\2\20I\3\2\2\2\22K\3\2\2\2\24M\3\2\2\2\26"+
 		"\30\5\4\3\2\27\26\3\2\2\2\30\33\3\2\2\2\31\27\3\2\2\2\31\32\3\2\2\2\32"+
 		"\34\3\2\2\2\33\31\3\2\2\2\34\35\7\2\2\3\35\3\3\2\2\2\36\37\7\4\2\2\37"+
-		" \7\21\2\2 #\7\r\2\2!#\5\6\4\2\"\36\3\2\2\2\"!\3\2\2\2#\5\3\2\2\2$\'\5"+
-		"\b\5\2%\'\5\n\6\2&$\3\2\2\2&%\3\2\2\2\'\7\3\2\2\2()\7\21\2\2)*\7\13\2"+
-		"\2*+\5\f\7\2+\t\3\2\2\2,-\7\3\2\2-.\5\16\b\2./\7\r\2\2/\13\3\2\2\2\60"+
-		"\61\5\16\b\2\61\62\7\r\2\2\62C\3\2\2\2\63\64\5\16\b\2\64\65\t\2\2\2\65"+
-		"\66\5\16\b\2\66\67\7\r\2\2\67C\3\2\2\289\5\16\b\29:\t\3\2\2:;\5\16\b\2"+
-		";<\7\r\2\2<C\3\2\2\2=>\5\16\b\2>?\7\t\2\2?@\5\16\b\2@A\7\r\2\2AC\3\2\2"+
-		"\2B\60\3\2\2\2B\63\3\2\2\2B8\3\2\2\2B=\3\2\2\2C\r\3\2\2\2DH\5\20\t\2E"+
-		"H\5\22\n\2FH\5\24\13\2GD\3\2\2\2GE\3\2\2\2GF\3\2\2\2H\17\3\2\2\2IJ\7\21"+
-		"\2\2J\21\3\2\2\2KL\7\20\2\2L\23\3\2\2\2MN\7\17\2\2N\25\3\2\2\2\7\31\""+
-		"&BG";
+		" \7\20\2\2 #\7\f\2\2!#\5\6\4\2\"\36\3\2\2\2\"!\3\2\2\2#\5\3\2\2\2$\'\5"+
+		"\b\5\2%\'\5\n\6\2&$\3\2\2\2&%\3\2\2\2\'\7\3\2\2\2()\7\20\2\2)*\7\n\2\2"+
+		"*+\5\f\7\2+\t\3\2\2\2,-\7\3\2\2-.\5\16\b\2./\7\f\2\2/\13\3\2\2\2\60\61"+
+		"\5\16\b\2\61\62\7\f\2\2\62C\3\2\2\2\63\64\5\16\b\2\64\65\t\2\2\2\65\66"+
+		"\5\16\b\2\66\67\7\f\2\2\67C\3\2\2\289\5\16\b\29:\t\3\2\2:;\5\16\b\2;<"+
+		"\7\f\2\2<C\3\2\2\2=>\5\16\b\2>?\7\t\2\2?@\5\16\b\2@A\7\f\2\2AC\3\2\2\2"+
+		"B\60\3\2\2\2B\63\3\2\2\2B8\3\2\2\2B=\3\2\2\2C\r\3\2\2\2DH\5\20\t\2EH\5"+
+		"\22\n\2FH\5\24\13\2GD\3\2\2\2GE\3\2\2\2GF\3\2\2\2H\17\3\2\2\2IJ\7\20\2"+
+		"\2J\21\3\2\2\2KL\7\17\2\2L\23\3\2\2\2MN\7\16\2\2N\25\3\2\2\2\7\31\"&B"+
+		"G";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

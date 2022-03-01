@@ -55,7 +55,6 @@ MINUS: '-';
 DIV: '/';
 MULT: '*';
 MOD: '%';
-EQUALS: '==';
 ASSIGN: '=';
 NOTEQUAL: '!=';
 
