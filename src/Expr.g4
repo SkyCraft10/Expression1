@@ -1,56 +1,50 @@
 grammar Expr;
 
-program :
-              declare*
-              statement*
-              EOF;
+prog :
+             declare*
+             EOF;
 
-// Parse rule for variable declarations
+// Rule for variable declarations
 
-declare   :
-              INT VARIABLENAME SEMI;
+declare   : INT VARIABLENAME SEMI
+            | makestate;
 
-// Parse rule for statements
+// Rule for statements
 
-statement :
-            outstatement
-           | assignstatement;
+makestate : assignstate
+            |outstate;
 
-// Parse rule for print statements
+// Rule for assignment statements
 
-outstatement  :
+assignstate:
+           VARIABLENAME ASSIGN expression;
+
+// Rule for print statements
+
+outstate :
           OUTSTATEMENT term SEMI;
 
-// Parse rule for assignment statements
+// Rule for expressions
 
-assignstatement :
-                 VARIABLENAME ASSIGN expression;
-
-// Parse rule for expressions
-
-expression :
-            term
-             |
-             term PLUS term
-             |term MINUS term
-             |term DIV term
-             |term MULT term
+expression : term
+             |term (PLUS|MINUS) term
+             |term (MULT|DIV) term
              |term MOD term;
 
-// Parse rule for terms
+// Rule for terms
 
 term :
-      identifier
+      id
       |integer
       |floatnum;
 
-// Parse rule for identifiers
-identifier: VARIABLENAME;
+// Rule for identifiers
+id: VARIABLENAME;
 
-//Parse rule for integers
-integer: INTEGERS;
+// Rule for integers
+integer: INTEGER;
 
-// Parse rule for floating-point numbers
+// Rule for floating-point numbers
 floatnum: FLOAT;
 
 OUTSTATEMENT: 'print';
@@ -67,10 +61,12 @@ NOTEQUAL: '!=';
 
 SEMI: ';';
 
+POINT: '.';
+
 FLOAT: [0-9]+ '.' [0-9]*
        | '.'[0-9]+;
 
-INTEGERS: [0-9]+ ;
+INTEGER: [0-9]+ ;
 
 VARIABLENAME: [a-zA-Z]+;
 
