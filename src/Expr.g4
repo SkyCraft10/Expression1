@@ -26,10 +26,10 @@ outstate :
 
 // Rule for expressions
 
-expression : term
-             |term (PLUS|MINUS) term
-             |term (MULT|DIV) term
-             |term MOD term;
+expression : term SEMI
+             |term (PLUS|MINUS) term SEMI
+             |term (MULT|DIV) term SEMI
+             |term MOD term SEMI;
 
 // Rule for terms
 
