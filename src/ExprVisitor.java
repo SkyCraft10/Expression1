@@ -10,11 +10,11 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#program}.
+	 * Visit a parse tree produced by {@link ExprParser#prog}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitProgram(ExprParser.ProgramContext ctx);
+	T visitProg(ExprParser.ProgContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ExprParser#declare}.
 	 * @param ctx the parse tree
@@ -22,23 +22,23 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDeclare(ExprParser.DeclareContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#statement}.
+	 * Visit a parse tree produced by {@link ExprParser#makestate}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStatement(ExprParser.StatementContext ctx);
+	T visitMakestate(ExprParser.MakestateContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#outstatement}.
+	 * Visit a parse tree produced by {@link ExprParser#assignstate}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOutstatement(ExprParser.OutstatementContext ctx);
+	T visitAssignstate(ExprParser.AssignstateContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#assignstatement}.
+	 * Visit a parse tree produced by {@link ExprParser#outstate}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssignstatement(ExprParser.AssignstatementContext ctx);
+	T visitOutstate(ExprParser.OutstateContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ExprParser#expression}.
 	 * @param ctx the parse tree
@@ -52,11 +52,11 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTerm(ExprParser.TermContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#identifier}.
+	 * Visit a parse tree produced by {@link ExprParser#id}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIdentifier(ExprParser.IdentifierContext ctx);
+	T visitId(ExprParser.IdContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ExprParser#integer}.
 	 * @param ctx the parse tree

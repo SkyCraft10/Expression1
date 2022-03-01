@@ -7,15 +7,15 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface ExprListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#program}.
+	 * Enter a parse tree produced by {@link ExprParser#prog}.
 	 * @param ctx the parse tree
 	 */
-	void enterProgram(ExprParser.ProgramContext ctx);
+	void enterProg(ExprParser.ProgContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#program}.
+	 * Exit a parse tree produced by {@link ExprParser#prog}.
 	 * @param ctx the parse tree
 	 */
-	void exitProgram(ExprParser.ProgramContext ctx);
+	void exitProg(ExprParser.ProgContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ExprParser#declare}.
 	 * @param ctx the parse tree
@@ -27,35 +27,35 @@ public interface ExprListener extends ParseTreeListener {
 	 */
 	void exitDeclare(ExprParser.DeclareContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#statement}.
+	 * Enter a parse tree produced by {@link ExprParser#makestate}.
 	 * @param ctx the parse tree
 	 */
-	void enterStatement(ExprParser.StatementContext ctx);
+	void enterMakestate(ExprParser.MakestateContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#statement}.
+	 * Exit a parse tree produced by {@link ExprParser#makestate}.
 	 * @param ctx the parse tree
 	 */
-	void exitStatement(ExprParser.StatementContext ctx);
+	void exitMakestate(ExprParser.MakestateContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#outstatement}.
+	 * Enter a parse tree produced by {@link ExprParser#assignstate}.
 	 * @param ctx the parse tree
 	 */
-	void enterOutstatement(ExprParser.OutstatementContext ctx);
+	void enterAssignstate(ExprParser.AssignstateContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#outstatement}.
+	 * Exit a parse tree produced by {@link ExprParser#assignstate}.
 	 * @param ctx the parse tree
 	 */
-	void exitOutstatement(ExprParser.OutstatementContext ctx);
+	void exitAssignstate(ExprParser.AssignstateContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#assignstatement}.
+	 * Enter a parse tree produced by {@link ExprParser#outstate}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssignstatement(ExprParser.AssignstatementContext ctx);
+	void enterOutstate(ExprParser.OutstateContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#assignstatement}.
+	 * Exit a parse tree produced by {@link ExprParser#outstate}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssignstatement(ExprParser.AssignstatementContext ctx);
+	void exitOutstate(ExprParser.OutstateContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ExprParser#expression}.
 	 * @param ctx the parse tree
@@ -77,15 +77,15 @@ public interface ExprListener extends ParseTreeListener {
 	 */
 	void exitTerm(ExprParser.TermContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#identifier}.
+	 * Enter a parse tree produced by {@link ExprParser#id}.
 	 * @param ctx the parse tree
 	 */
-	void enterIdentifier(ExprParser.IdentifierContext ctx);
+	void enterId(ExprParser.IdContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#identifier}.
+	 * Exit a parse tree produced by {@link ExprParser#id}.
 	 * @param ctx the parse tree
 	 */
-	void exitIdentifier(ExprParser.IdentifierContext ctx);
+	void exitId(ExprParser.IdContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ExprParser#integer}.
 	 * @param ctx the parse tree
